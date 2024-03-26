@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="one.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div class="first">
+            <div>
+                <input type="text" id="question" placeholder="Enter the Question">
+            </div>
+            <div>
+                <input type="text" id="one" placeholder=" a)">
+                <input type="text" id="two" placeholder=" b)">
+                <input type="text" id="three" placeholder=" c)">
+                <input type="text" id="four" placeholder=" d)">
+                <input type="text" id="ans" placeholder=" ans)">
+            </div>
+            <div>
+                <button class="add" onclick="add(event)">Add Question</button>
+                <button class="start" onclick="loadQuiz()">Start Quiz</button>
+            </div>
+        </div>
+        <div id="second">
+            <div id="end">
+
+                <div class="questioned">
+                    <div class="option">
+                        <p id="question1">What is your name?</p>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="option" class="input" value="a">
+                        <label for="" id="firstly">first</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="option" class="input" value="b">
+                        <label for="" id="secondly">second</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="option" class="input" value="c">
+                        <label for="" id="thirdly">third</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="option" class="input" value="d">
+                        <label for="" id="fourly">four</label>
+                    </div>
+                </div>
+                <div class="submit">
+                    <button id="submitbutton"">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="one.jsx"></script>
+</body>
+
+</html>
