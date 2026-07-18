@@ -95,7 +95,8 @@ h2 {
 }
 
 .question-count,
-.score-pill {
+.score-pill,
+.timer-pill {
     flex: 0 0 auto;
     border-radius: 999px;
     background: var(--surface-muted);
@@ -103,6 +104,23 @@ h2 {
     font-size: 0.92rem;
     font-weight: 700;
     padding: 8px 12px;
+}
+
+.quiz-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.timer-pill {
+    background: #e8f6f2;
+    color: var(--secondary);
+}
+
+.timer-pill.is-warning {
+    background: var(--error-bg);
+    color: var(--error-text);
 }
 
 .question-form {
@@ -315,13 +333,33 @@ textarea:focus {
     font-size: 0.92rem;
 }
 
+.question-item-actions {
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.edit-question-button,
 .remove-question-button {
     align-self: start;
     background: transparent;
-    color: var(--danger);
     cursor: pointer;
     font-weight: 700;
     white-space: nowrap;
+}
+
+.edit-question-button {
+    color: var(--primary);
+}
+
+.edit-question-button:hover {
+    color: var(--primary-dark);
+}
+
+.remove-question-button {
+    color: var(--danger);
 }
 
 .empty-state {
@@ -414,6 +452,11 @@ textarea:focus {
     .form-row,
     .question-item-header {
         display: grid;
+    }
+
+    .question-item-actions,
+    .quiz-stats {
+        justify-content: flex-start;
     }
 
     .options-grid,

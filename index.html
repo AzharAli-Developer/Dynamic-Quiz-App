@@ -60,7 +60,8 @@
 
                     <div class="actions">
                         <button class="button secondary-button" type="button" id="clear-form-button">Clear</button>
-                        <button class="button primary-button" type="submit">Add Question</button>
+                        <button class="button secondary-button is-hidden" type="button" id="cancel-edit-button">Cancel Edit</button>
+                        <button class="button primary-button" type="submit" id="save-question-button">Add Question</button>
                     </div>
                 </div>
 
@@ -85,7 +86,10 @@
                     <p class="eyebrow" id="quiz-progress">Question 1 of 1</p>
                     <h2 id="quiz-title">Quiz</h2>
                 </div>
-                <span class="score-pill" id="live-score">Score: 0</span>
+                <div class="quiz-stats" aria-label="Quiz status">
+                    <span class="score-pill" id="live-score">Score: 0</span>
+                    <span class="timer-pill" id="quiz-timer">Time: 30s</span>
+                </div>
             </div>
 
             <div class="quiz-card">
