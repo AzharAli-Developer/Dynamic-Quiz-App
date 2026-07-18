@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create custom quiz questions, take the quiz, and view your final score.">
+    <title>Dynamic Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <main class="app-shell">
+        <section class="panel builder-panel" id="builder-panel" aria-labelledby="builder-title">
+            <div class="section-header">
+                <div>
+                    <p class="eyebrow">Question Builder</p>
+                    <h1 id="builder-title">Dynamic Quiz App</h1>
+                </div>
+                <span class="question-count" id="question-count">0 questions</span>
+            </div>
+
+            <form class="question-form" id="question-form" novalidate>
+                <div class="form-group">
+                    <label for="question-input">Question</label>
+                    <textarea id="question-input" rows="3" placeholder="Example: Which language runs in a web browser?"></textarea>
+                </div>
+
+                <div class="options-grid">
+                    <div class="form-group">
+                        <label for="option-a">Option A</label>
+                        <input id="option-a" type="text" placeholder="A">
+                    </div>
+                    <div class="form-group">
+                        <label for="option-b">Option B</label>
+                        <input id="option-b" type="text" placeholder="B">
+                    </div>
+                    <div class="form-group">
+                        <label for="option-c">Option C</label>
+                        <input id="option-c" type="text" placeholder="C">
+                    </div>
+                    <div class="form-group">
+                        <label for="option-d">Option D</label>
+                        <input id="option-d" type="text" placeholder="D">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="correct-answer">Correct Answer</label>
+                        <select id="correct-answer">
+                            <option value="">Select answer</option>
+                            <option value="a">A</option>
+                            <option value="b">B</option>
+                            <option value="c">C</option>
+                            <option value="d">D</option>
+                        </select>
+                    </div>
+
+                    <div class="actions">
+                        <button class="button secondary-button" type="button" id="clear-form-button">Clear</button>
+                        <button class="button primary-button" type="submit">Add Question</button>
+                    </div>
+                </div>
+
+                <p class="message" id="form-message" role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="question-list-block">
+                <div class="list-header">
+                    <h2>Added Questions</h2>
+                    <button class="text-button" type="button" id="clear-questions-button">Clear All</button>
+                </div>
+                <ol class="question-list" id="question-list"></ol>
+                <p class="empty-state" id="empty-state">No questions added yet.</p>
+            </div>
+
+            <button class="button start-button" type="button" id="start-quiz-button" disabled>Start Quiz</button>
+        </section>
+
+        <section class="panel quiz-panel is-hidden" id="quiz-panel" aria-labelledby="quiz-title">
+            <div class="section-header">
+                <div>
+                    <p class="eyebrow" id="quiz-progress">Question 1 of 1</p>
+                    <h2 id="quiz-title">Quiz</h2>
+                </div>
+                <span class="score-pill" id="live-score">Score: 0</span>
+            </div>
+
+            <div class="quiz-card">
+                <p class="quiz-question" id="quiz-question"></p>
+                <div class="answer-options" id="answer-options"></div>
+                <p class="message" id="quiz-message" role="status" aria-live="polite"></p>
+            </div>
+
+            <div class="quiz-actions">
+                <button class="button secondary-button" type="button" id="exit-quiz-button">Exit Quiz</button>
+                <button class="button primary-button" type="button" id="submit-answer-button">Submit Answer</button>
+            </div>
+        </section>
+
+        <section class="panel result-panel is-hidden" id="result-panel" aria-labelledby="result-title">
+            <p class="eyebrow">Result</p>
+            <h2 id="result-title">Quiz Completed</h2>
+            <p class="result-score" id="result-score"></p>
+            <p class="result-summary" id="result-summary"></p>
+
+            <div class="result-actions">
+                <button class="button secondary-button" type="button" id="review-button">Review Questions</button>
+                <button class="button primary-button" type="button" id="restart-button">Restart Quiz</button>
+                <button class="button danger-button" type="button" id="new-quiz-button">Create New Quiz</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
